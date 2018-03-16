@@ -10,39 +10,6 @@
 </head>
 <body>
 <div class ="container">
-  <div class="page-header">
-    <h1 class="text-center">Welcome To Eat Da Burger</h1>
-</div>
-<div class = "center">
-<img src = "../public/assets/img/burger.jpg">
-</div>
-<div class="row">
-  <div class="col-sm-6">
-    <h2>Eat the burgers</h2>
-        <form id="update" action="/burgers/devour/{{this.id}}?_method=PUT" method="POST">
-          <input type="hidden" name="devoured" value="true">
-          <button class="btn btn-info" type="submit">Devour</button>
-        </form>
-        <div class="burgerName">
-        </div>
-  </div>
-
-  <div class="col-sm-6">
-    <h2>Burgers Devoured!</h2>
-        <div class="burgerName devoured">
-        </div>
-    </div>
-
-
-</div>
-
-<h2>Can I take your order?</h2>
-
-<form id="create" action="/burgers/create" method="POST">
-  <textarea name="burger_name"></textarea>
-  <button class="btn btn-info" type="submit">Submit</button>
-</form>
-
 </div>
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
