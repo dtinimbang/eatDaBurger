@@ -10,7 +10,7 @@
       {{!-- burgers ready --}}
         {{#each burgers}}
           {{#unless devoured}}
-          <form action="burger/eat/{{id}}" method="POST">
+          <form action="/burger/eat/{{id}}?_method=PUT" method="POST">
             <div class="input-group">
               <li class="form-control">{{id}}.{{burger_name}}</li>
                 <span class="input-group-btn">

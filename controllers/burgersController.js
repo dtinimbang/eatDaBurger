@@ -22,7 +22,7 @@ var burger = require("../models/burger.js");
 
 //create our routes
 router.get("/", function (req, res) {
-    burger.all(function (data) {
+    burger.selectAll(function (data) {
         var hbsObject = {
             burgers: data
         };
@@ -31,7 +31,7 @@ router.get("/", function (req, res) {
     });
 });
 
-router.post("/burgers/create", function (req, res) {
+router.post("/api/burgers", function (req, res) {
     burger.create([
         "burger_name"
     ], [
@@ -43,7 +43,7 @@ router.post("/burgers/create", function (req, res) {
     });
 });
 
-router.put('/burgers/:id', function(req, res) {
+router.put('/burger/eat/:id', function(req, res) {
     var condition = 'id = ' + req.params.id;
   
     burger.update({

@@ -10,7 +10,7 @@ var connection = mysql.createConnection({
     host: "localhost",
     user: "root",
     password: key.mysqlaccess.access,
-    database: "buger_db"
+    database: "burger_db"
 });
 
 // connection will be made here
