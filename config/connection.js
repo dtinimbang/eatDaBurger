@@ -1,12 +1,15 @@
 // setting up my MySQL connection
 
 var mysql = require("mysql");
+require("dotenv").config();
+
+var key = require("./key.js");
 
 var connection = mysql.createConnection({
     port: 3306,
     host: "localhost",
     user: "root",
-    password: "devin0804",
+    password: key.mysqlaccess.access,
     database: "buger_db"
 });
 
