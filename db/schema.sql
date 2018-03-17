@@ -2,7 +2,7 @@
 CREATE DATABASE burger_db;
 USE burger_db;
 
--- The burgerstable will have a column for id 
+-- The burgerstable will have a column for id,
 (PRIMARY KEY AUTO_INCREMENT int), burger_name (var,char) 
 devoured (bool).
 
