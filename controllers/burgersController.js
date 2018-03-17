@@ -1,4 +1,3 @@
-
 // #### Controller setup
 
 // 1. Inside your `burger` directory, create a folder named `controllers`.
@@ -15,7 +14,6 @@
 
 //Working off of cats activity
 
-
 var express = require("express");
 var router = express.Router();
 
@@ -23,8 +21,8 @@ var router = express.Router();
 var burger = require("../models/burger.js");
 
 //create our routes
-router.get("/", function(req, res){
-    burger.all(function(data){
+router.get("/", function (req, res) {
+    burger.all(function (data) {
         var hbsObject = {
             burgers: data
         };
@@ -33,33 +31,28 @@ router.get("/", function(req, res){
     });
 });
 
-router.post("/burgers", function(req, res){
+router.post("/burgers/create", function (req, res) {
     burger.create([
-        "name"
-    ],[
-        req.body.name
-    ], function(result){
-        res.json({ id: result.insertId});
+        "burger_name"
+    ], [
+        req.body.burger_name
+    ], function (data) {
+        res.redirect("/")
+            
+        
     });
 });
-    
-router.put("/burgers/:id", function(req, res) {
-    var condition = "id = " + req.params.id;
 
-    console.log("condition", condition);
-
+router.put('/burgers/:id', function(req, res) {
+    var condition = 'id = ' + req.params.id;
+  
     burger.update({
-        name: req.body.name
-      }, condition, function(result) {
-        if (result.changedRows == 0) {
-          // If no rows were changed, then the ID must not exist, so 404
-          return res.status(404).end();
-        } else {
-          res.status(200).end();
-        }
-      });
-    });
-    
+      devoured: true
+    }, condition, function(data) {
+      res.redirect('/');
+  });
+});
+
 
 
 // Export routes for server.js to use.
