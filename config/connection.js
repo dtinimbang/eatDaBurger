@@ -2,7 +2,6 @@
 
 var mysql = require("mysql");
 require("dotenv").config();
-
 var key = require("./key.js");
 
 var connection = mysql.createConnection({
