@@ -4,19 +4,23 @@ var mysql = require("mysql");
 require("dotenv").config();
 var key = require("./key.js");
 
-var connection = mysql.createConnection({
-    port: 3306,
-    host: "localhost",
-    user: "root",
-    password: key.mysqlaccess.access,
-    database: "burger_db"
-});
+if (process.env.JAWSDB_URL) {
+    connection = mysql.createConnection(process.env.JAWSDB_URL);
+} else {
 
+    var connection = mysql.createConnection({
+        port: 3306,
+        host: "localhost",
+        user: "root",
+        password: key.mysqlaccess.access,
+        database: "burger_db"
+    });
+};
 // connection will be made here
 
-connection.connect(function(err){
+connection.connect(function (err) {
 
-    if(err){
+    if (err) {
         console.error("error connection: " + err.stack);
         return;
     }
